@@ -1,0 +1,8 @@
+<ul>
+  {{#each allArticles}}
+  <li>
+    <a href="/articles/{{_id}}">{{title}}</a> {{! lien vers le detail }}
+    - <a href="/articles/edit?article_id={{_id}}">EDIT</a>
+  </li>
+  {{/each}}
+</ul>
