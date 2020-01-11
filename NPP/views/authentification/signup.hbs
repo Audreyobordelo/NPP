@@ -27,9 +27,14 @@
     </label>
   </p>
 
-  {{#if errorMessage}}
-  <div class="error-message">{{errorMessage}}</div>
+  {{#if message}}
+  <div class="error-message">{{ message }}</div>
   {{/if}}
 
   <button type="submit">Signup</button>
+
+  <p class="account-message">
+    Do you already have an account?
+    <a href="/login">Login</a>
+  </p>
 </form>
