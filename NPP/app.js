@@ -106,7 +106,7 @@ app.use('/', authRouter);
 // const allArticlesRouter = require('./routes/articles/all.js');
 // app.use('/all', allArticlesRouter);
 
-// const profileRouter = require('./routes/media/profile.js');
-// app.use('/', profileRouter);
+const profileRouter = require('./routes/media/profile.js');
+app.use('/', profileRouter);
 
 module.exports = app;

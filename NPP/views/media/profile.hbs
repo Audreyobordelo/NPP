@@ -1,1 +1,35 @@
-<p>KOUKOU CECI EST LE PROFIL</p>
+<form action="/profile" method="post" enctype="multipart/form-data">
+  <p>
+    <label>
+      Media name:
+      <input type="text" name="name" value="{{media.name}}">
+    </label>
+  </p>
+
+  <p>
+    <label>
+      Email:
+      <input type="text" name="email">
+    </label>
+  </p>
+
+  <p>
+    <label>
+      Password:
+      <input type="password" name="password">
+    </label>
+  </p>
+
+  <p>
+    <label>
+      Profile picture:
+      <input type="file" name="profile-pic">
+    </label>
+  </p>
+
+  {{#if message}}
+  <div class="error-message">{{ message }}</div>
+  {{/if}}
+
+  <button type="submit">Save</button>
+</form>
