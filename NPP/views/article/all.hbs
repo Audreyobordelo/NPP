@@ -1,8 +1,22 @@
-<ul>
-  {{#each allArticles}}
-  <li>
-    <a href="/articles/{{_id}}">{{title}}</a> {{! lien vers le detail }}
-    <a href="/articles/edit?article_id={{_id}}">EDIT</a>
-  </li>
-  {{/each}}
-</ul>
+<div class="bouton">
+  <a href="/new">New article</a>
+</div>
+
+<div class="bouton">
+  <a href="/profile/{{media.id}}">Edit profile</a>
+</div>
+
+<div class="bouton">
+  <a href="/logout">Log out</a>
+</div>
+
+<div class="all-articles">
+  <ul>
+    {{#each Articles}}
+    <li>
+      <a href="/articles/{{_id}}">{{title}}</a> {{! lien vers le detail }}
+      - <a href="/articles/edit?article_id={{_id}}">EDIT</a>
+    </li>
+    {{/each}}
+  </ul>
+</div>
