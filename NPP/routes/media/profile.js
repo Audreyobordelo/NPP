@@ -5,16 +5,21 @@ const Media = require('../../models/media.js');
 
 const uploadCloud = require('../../config/cloudinary.js');
 
-// on affiche le profil
-profileRouter.get('/profile',(req, res) => {
-  res.render('media/profile');
-});
+// // on affiche le profil
+// profileRouter.get('/profile',(req, res) => {
+//   res.render('media/profile');
+// });
 
 // on récupère les infos
-profileRouter.get('/profile/:id', (req, res) => {
-  Media.findOne({_id: req.params.media_id})
+profileRouter.get('/profile', (req, res) => {
+  if (!req.user) {
+    res.redirect('/');
+    return;
+  };
+
+  Media.findOne({_id: req.user.id})
   .then((media) => {
-    res.render('media/profile', {media});
+    res.render('media/profile', { media: req.user });
   })
   .catch ((err) => {
     console.log(err);
@@ -43,11 +48,16 @@ profileRouter.post("/profile", uploadCloud.single('profile-pic'), (req, res, nex
         return;
       }
 
-      // c'est ok, on encrypte le nouveau mdp
+      if (media.password !== req.body.password) {
+      // si mdp est modifié, on encrypte le nouveau mdp
       const salt = bcrypt.genSaltSync(bcryptSalt);
       const hashPass = bcrypt.hashSync(password, salt);
+      }
 
-      
+      // si pas de file, on change pas photo de profil
+
+      // update
+
 
     })
     .catch(err => {
