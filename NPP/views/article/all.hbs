@@ -1,11 +1,9 @@
-{{#if media}}
-
 <div class="bouton">
   <a href="/new">New article</a>
 </div>
 
 <div class="bouton">
-  <a href="/profile">Edit profile</a>
+  <a href="/profile/{{media.id}}">Edit profile</a>
 </div>
 
 <div class="bouton">
@@ -22,5 +20,3 @@
     {{/each}}
   </ul>
 </div>
-
-{{/if}}

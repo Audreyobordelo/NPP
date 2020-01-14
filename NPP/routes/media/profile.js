@@ -10,6 +10,17 @@ profileRouter.get('/profile',(req, res) => {
   res.render('media/profile');
 });
 
+// on récupère les infos
+profileRouter.get('/profile/:id', (req, res) => {
+  Media.findOne({_id: req.params.media_id})
+  .then((media) => {
+    res.render('media/profile', {media});
+  })
+  .catch ((err) => {
+    console.log(err);
+  });
+});
+
 // quand l'utilisateur valide ses modif
 profileRouter.post("/profile", uploadCloud.single('profile-pic'), (req, res, next) => {
   const name = req.body.name;

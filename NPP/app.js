@@ -9,6 +9,7 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 const session = require("express-session");
+const MongoStore = require('connect-mongo')(session);
 const bcrypt = require("bcrypt");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
@@ -53,6 +54,8 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 // express session
 app.use(session({
   secret: "our-passport-local-strategy-app",
+  // ne pas oublier le store pour que la connexion se réinitialise pas
+  store: new MongoStore( { mongooseConnection: mongoose.connection }),
   resave: true,
   saveUninitialized: true
 }));
@@ -103,8 +106,8 @@ app.use('/', indexRouter);
 const authRouter = require('./routes/media/auth.js');
 app.use('/', authRouter);
 
-// const allArticlesRouter = require('./routes/articles/all.js');
-// app.use('/all', allArticlesRouter);
+const allRouter = require('./routes/articles/all.js');
+app.use('/', allRouter);
 
 const profileRouter = require('./routes/media/profile.js');
 app.use('/', profileRouter);
