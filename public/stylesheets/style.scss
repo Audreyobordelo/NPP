@@ -1,8 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+  color: #fff;
+  text-decoration: none;
 }
+
+/* INDEX */
+
+header {
+  text-align: center;
+  z-index: 10;
+}
+
+.logo-index {
+  width: 35%;
+  display: inline-block;
+  z-index: 8;
+}
+
+.boutons {
+  margin: auto;
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+
+.welcome {
+  text-align: center;
+  padding: 30px;
+  margin: auto;
+  width: 62%;
+  font-size: 16px;
+}
+
+.bouton {
+  background-color: #00B7FF;
+  padding: 15px;
+  border-radius: 40px;
+  -moz-border-radius: 40px;
+  -webkit-border-radius: 40px;
+  width: 84%;
+  margin: 5px;
+  text-align: center;
+  color: white;
+  font-size: 15px;
+  font-family: arial;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* SIGN UP */
+
+/* LOG IN */
+.field-name {
+  background-color: #f19d31;
+  padding: 15px;
+  border-radius: 0 40px 40px 0;
+  -moz-border-radius: 0 40px 40px 0;
+  -webkit-border-radius: 0 40px 40px 0;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  width: 100%;
+}
+
+.field-content {
+  background: white;
+}
+
+input {
+
+}
+
+/* PROFILE */
+
+/* ARTICLE */ 
+
+/* ALL ARTICLES */
+
+/* ERROR PAGE */ 

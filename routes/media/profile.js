@@ -60,7 +60,7 @@ profileRouter.post("/profile", uploadCloud.single('profile-pic'), (req, res, nex
       // update
       Media.update({_id: req.user.id}, {$set: {name,email,password,profilePic}})
       .then(updatedMedia => {console.log("yAY, on a updaté : ", updatedMedia);
-      res.redirect('/profile'); // à vérif
+      res.redirect('media/profile'); // à vérif
     })
       .catch(err => {
         next(err);
