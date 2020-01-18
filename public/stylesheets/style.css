@@ -80,7 +80,12 @@ header {
   align-items: center; }
 
 input {
-  background: #fff; }
+  background: #fff;
+  border: darkgrey; }
+
+textarea {
+  background: #fff;
+  border: darkgrey; }
 
 .center-form {
   display: inline-block;
