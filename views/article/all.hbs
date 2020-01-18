@@ -11,12 +11,15 @@
 </div>
 
 <div class="all-articles">
+  <p>Hello {{myself.name}}, here are your {{myself.articles.length}} articles!</p>
   <ul>
-    {{#each Articles}}
+    {{#each myself.articles}}
     <li>
-      <a href="/articles/{{_id}}">{{title}}</a> {{! lien vers le detail }}
-      - <a href="/articles/edit?article_id={{_id}}">EDIT</a>
+      <a href="/edit-article/{{_id}}">{{title}}</a>
+      - <a href="/edit-article/edit?article_id={{_id}}">EDIT</a>
     </li>
-    {{/each}}
+    {{else}}
+    no post
+   {{/each}}
   </ul>
 </div>
