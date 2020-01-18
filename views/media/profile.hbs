@@ -1,35 +1,59 @@
-<form action="/profile" method="post" enctype="multipart/form-data">
-  <p>
-    <label>
-      Media name:
-      <input type="text" name="name" value="{{media.name}}">
-    </label>
-  </p>
+<div class="center-page">
+  <form action="/profile" method="post" enctype="multipart/form-data" class="center-form">
+    <div class="img-profile-pic" style="background: url({{media.profilePic}});background-size:contain"> 
+      {{!-- <div class="img-profile-pic">
+        <img src={{media.profilePic}} alt="">
+      </div> --}}
+    </div>
 
-  <p>
-    <label>
-      Email:
-      <input type="text" name="email" value="{{media.email}}">
-    </label>
-  </p>
+    <p>
+      <label>
+        <div class="field">
+          <div class="field-name">Media name:</div>
+          <div class="field-content">
+            <input type="text" name="name" value="{{media.name}}">
+          </div>
+        </div>
+      </label>
+    </p>
 
-  <p>
-    <label>
-      Password:
-      <input type="password" name="password" value="***">
-    </label>
-  </p>
+    <p>
+      <label>
+        <div class="field">
+          <div class="field-name">Email:</div>
+          <div class="field-content">
+            <input type="text" name="email" value="{{media.email}}">
+          </div>
+        </div>
+      </label>
+    </p>
 
-  <p>
-    <label>
-      Profile picture:
-      <input type="file" name="profile-pic">
-    </label>
-  </p>
+    <p>
+      <label>
+        <div class="field">
+          <div class="field-name">Password:</div>
+          <div class="field-content">
+            <input type="password" name="password" value="***">
+          </div>
+        </div>
+      </label>
+    </p>
 
-  {{#if message}}
-  <div class="error-message">{{ message }}</div>
-  {{/if}}
+    <p>
+      <label>
+        <div class="field">
+          <div class="field-name">Profile picture:</div>
+          <div class="field-content">
+            <input type="file" name="profile-pic">
+          </div>
+        </div>
+      </label>
+    </p>
 
-  <button type="submit">Save</button>
-</form>
+    {{#if message}}
+    <div class="error-message">{{ message }}</div>
+    {{/if}}
+
+    <button type="submit">Save</button>
+  </form>
+</div>

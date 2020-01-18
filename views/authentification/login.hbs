@@ -1,21 +1,33 @@
-<form action="/login" method="post">
-  <p>
-    <label>
-      <div class="field-name">Email:</div>
-      <div class="field-content"><input type="text" name="email"></div>
-    </label>
-  </p>
+<div class="center-page">
+  <form action="/login" method="post" class="center-form">
+    <p>
+      <label>
+        <div class="field">
+          <div class="field-name">Email:</div>
+          <div class="field-content">
+            <input type="text" name="email">
+          </div>
+        </div>
+      </label>
+    </p>
 
-  <p>
-    <label>
-      Password:
-      <input type="password" name="password">
-    </label>
-  </p>
+    <p>
+      <label>
+        <div class="field">
+          <div class="field-name">Password:</div>
+          <div class="field-content"><input type="password" name="password"></div>
+        </div>
+      </label>
+    </p>
 
-  {{#if message}}
-    <div class="error-message">{{ message }}</div>
-  {{/if}}
+    {{#if message}}
+      <div class="error-message">{{ message }}</div>
+    {{/if}}
 
-  <button type="submit">Login</button>
-</form>
+    <button type="submit">Login</button>
+    <p class="under-submit">
+      You don't have an account yet?<br>
+      You can <b><a href="/signup">sign up</a></b>, it's free!
+    </p>
+  </form>
+</div>
