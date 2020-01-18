@@ -1,22 +1,32 @@
-<div class="bouton">
-  <a href="/article/new">New article</a>
-</div>
+<div class="nav-bar">
+    <div class="nav-left">
+      <button>
+        <a href="/article/new">New article</a>
+      </button>
+    </div>
 
-<div class="bouton">
-  <a href="/profile">Edit profile</a>
-</div>
+    <div class="nav-middle">
+      <h1>{{myself.name}}</h1>
+      <h3>{{myself.articles.length}} articles</h3>
+      <p class="links-nav"><a href="/profile">Edit profile</a> - <a href="/logout">Log out</a></p>
+    </div>
 
-<div class="bouton">
-  <a href="/logout">Log out</a>
-</div>
+    <div class="nav-right">
+      <div class="profile-pic-nav" style="background: url({{myself.profilePic}}); background-size: contain; background-repeat: no-repeat; background-position: center;"> 
+      </div>
+    </div>
+  </div>
 
 <div class="all-articles">
-  <p>Hello {{myself.name}}, here are your {{myself.articles.length}} articles!</p>
   <ul>
     {{#each myself.articles}}
     <li>
-      <a href="/edit-article/{{_id}}">{{title}}</a>
-      - <a href="/edit-article/edit?article_id={{_id}}">EDIT</a>
+      <div class="title"><a href="/edit-article/{{_id}}">{{title}}</a></div>
+      <div class="author">{{author}}</div>
+      <div class="date">created at</div>
+      <div class="date">updated at></div>
+      <div class="action"><a href="/edit-article/{{_id}}">E</a></div>
+      <div class="action"><a href="/delete-article/{{_id}}">D</a></div>
     </li>
     {{else}}
     no post

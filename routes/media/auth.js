@@ -18,6 +18,11 @@ const ensureLogin = require("connect-ensure-login");
 
 // on affiche la page 
 router.get('/signup',(req, res) => {
+    // si user connecté, on redirige vers ses articles
+    if (req.user) {
+      res.redirect('article/all');
+      return;
+    }
   res.render('authentification/signup');
 });
 
@@ -80,6 +85,11 @@ router.post("/signup", uploadCloud.single('profile-pic'), (req, res, next) => {
 
 // on affiche la page
 router.get("/login", (req, res, next) => {
+  // si user connecté, on redirige vers ses articles
+  if (req.user) {
+    res.redirect('article/all');
+    return;
+  }
   res.render("authentification/login", { "message": req.flash("error") });
 });
 
