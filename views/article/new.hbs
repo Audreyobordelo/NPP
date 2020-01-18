@@ -1,47 +1,69 @@
 <form action="/article/create-article" method="POST" enctype="multipart/form-data">
-    <p>
-    <label>
-      Title :
-      <textarea name="content"></textarea>
-    </label>
+  <p>
+      <label>
+        <div class="field">
+          <div class="field-name">Title:</div>
+          <div class="field-content">
+            <input type="text" name="title">
+          </div>
+        </div>
+      </label>
     </p>
 
-    <p>
-    <label>
-      Featured picture :
-      <textarea name="featured-pic"></textarea>
-    </label>
-    </p>
+  <p>
+      <label>
+        <div class="field">
+          <div class="field-name">Featured picture:</div>
+          <div class="field-content">
+      <input type="file" name="picFeatured">
+          </div>
+        </div>
+      </label>
+  </p>
 
-    <p>
-    <label>
-      Caption :
-      <textarea name="featured-caption"></textarea>
-    </label>
-    </p>
+  <p>
+      <label>
+        <div class="field">
+          <div class="field-name">Caption:</div>
+          <div class="field-content">
+            <textarea name="picCaption"></textarea>
+          </div>
+        </div>
+      </label>
+  </p>
 
-    <p>
-    <label>
-      Author:
-      <textarea name="author"></textarea>
-    </label>
-    </p>
+  <p>
+      <label>
+        <div class="field">
+          <div class="field-name">Author(s):</div>
+          <div class="field-content">
+            <input type="text" name="author">
+          </div>
+        </div>
+      </label>
+  </p>
 
-    <p>
-    <label>
-      Article:
-      <textarea name="article"></textarea>
-    </label>
-    </p>
+  <p>
+      <label>
+        <div class="field">
+          <div class="field-name">Article:</div>
+          <div class="field-content">
+            <textarea name="article"></textarea>
+          </div>
+        </div>
+      </label>
+  </p>
 
-    <p>
-    <label>
-      Tags:
-      <textarea name="tags"></textarea>
-    </label>
-    </p>
+  <p>
+      <label>
+        <div class="field">
+          <div class="field-name">Tags:</div>
+          <div class="field-content">
+            <textarea name="tags"></textarea>
+          </div>
+        </div>
+      </label>
+  </p>
 
-    <p>
-        <button type="submit">Save</button>
-    </p>
+  <button type="submit">Save</button>
 </form>
