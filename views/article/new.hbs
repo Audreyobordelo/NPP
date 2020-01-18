@@ -1,22 +1,22 @@
-<form action="/articles" method="POST" enctype="multipart/form-data">
+<form action="/article/create-article" method="POST" enctype="multipart/form-data">
     <p>
     <label>
       Title :
-      <textarea name="content"></textarea>
+      <input name="title" />
     </label>
     </p>
 
     <p>
     <label>
       Featured picture :
-      <textarea name="featured-pic"></textarea>
+      <textarea name="picFeatured"></textarea>
     </label>
     </p>
 
     <p>
     <label>
       Caption :
-      <textarea name="featured-caption"></textarea>
+      <textarea name="picCaption"></textarea>
     </label>
     </p>
 
@@ -42,6 +42,6 @@
     </p>
 
     <p>
-        <button>Save</button>
+      <button type='submit'>Save</button>
     </p>
 </form>

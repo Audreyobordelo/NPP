@@ -1,8 +1,8 @@
+/*
 const express = require('express');
 const router = express.Router();
-
-const Post = require('../models/post.js');
-
+const Articles = require('../models/post.js');
+const Media = require('../../models/media.js');
 const uploadCloud = require('../config/cloudinary.js')
 
 router.get('/new', function (req, res, next) {
@@ -66,3 +66,4 @@ router.post('/:id/comments', uploadCloud.single('image'), function (req, res, ne
 })
 
 module.exports = router;
+*/

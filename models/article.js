@@ -1,9 +1,9 @@
 require('./media.js');
 
 const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+const {Schema}   = mongoose;
 
-const ArticleSchema = Schema({
+const ArticleSchema = new Schema({
   mediaId: {type: Schema.Types.ObjectId, ref: 'Media'},
   title: String,
   picFeatured: String,

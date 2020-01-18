@@ -62,7 +62,7 @@ router.post("/signup", uploadCloud.single('profile-pic'), (req, res, next) => {
             if (err) {
               return next(err)
             };
-            res.redirect('/all');
+            res.redirect('/article/all');
           });
         })
         .catch(err => {
@@ -85,7 +85,7 @@ router.get("/login", (req, res, next) => {
 
 // on se login avec passport
 router.post("/login", passport.authenticate("local", {
-  successRedirect: "/all",
+  successRedirect: "/article/all",
   failureRedirect: "/login",
   failureFlash: true,
   passReqToCallback: true
