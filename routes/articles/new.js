@@ -64,18 +64,33 @@ router.post("/create-article", uploadCloud.single('profile-pic'), (req, res, nex
     tags,
   });
     articles
+
+    // enregistrement sur la bdd de l'article
      .save()
       
      .then(artic => {
       console.log(artic);
-       res.redirect("all");
+
+    
+        Media.findByIdAndUpdate(req.user._id, { $push: { articles : artic._id }})
+        .then(
+          res.redirect("all")
+        )
+        
+        .catch((err) => {
+          next(err);
+        })
+  
+      
      })
+
+
      .catch(next)
 });
 
 //Media.findByIdAndUpdate(mediaId, { articles :  }, options, callback)
 
-//Media.findByIdAndUpdate({ articles : req.query. }, { $push: { reviews: { user, comments }}})
+//Media.findByIdAndUpdate({ articles : req.user._id }, { $push: { articles : })
 //      console.log('article', article);
       
 
