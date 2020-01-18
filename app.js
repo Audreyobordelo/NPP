@@ -18,7 +18,7 @@ const flash = require("connect-flash");
 const Media = require('./models/media.js');
 
 mongoose
-  .connect('mongodb://localhost/npp', {useNewUrlParser: true})
+  .connect(process.env.MONGODB_URI, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -96,7 +96,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.title = 'NPP - Get posting!';
 
 
 
