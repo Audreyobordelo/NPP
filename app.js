@@ -106,11 +106,20 @@ app.use('/', indexRouter);
 const authRouter = require('./routes/media/auth.js');
 app.use('/', authRouter);
 
-const allRouter = require('./routes/articles/all.js');
-app.use('/', allRouter);
-
 const profileRouter = require('./routes/media/profile.js');
 app.use('/', profileRouter);
+
+const allRouter = require('./routes/articles/all.js');
+app.use('/article', allRouter);
+
+const editRouter = require('./routes/articles/edit.js');
+app.use('/article', editRouter);
+
+const newRouter = require('./routes/articles/new.js');
+app.use('/article', newRouter);
+
+
+
 
 
 module.exports = app;

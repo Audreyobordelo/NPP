@@ -15,19 +15,20 @@ router.get('/all',(req, res) => {
   res.render('article/all', { media: req.user });
 });
 
-// //All : afficher tous les articles d'un media
-// router.get('/:id', function (req, res, next) {
-//     const id = req.params.id;
-//     Article.findById(id)
-//       .populate('article.mediaId')
-//       .then((article) => {
-//         console.log('article', article);
-//         res.render('articles/all', {
-//           title : Article.title,
-//           author: Article.author,
-//         });
-//       })
-//       .catch(next);
-//     ;
-//   });
+//All : afficher tous les articles d'un media
+router.get('/id/:id', function (req, res, next) {
+    const id = req.params.id;
+    Article.findById(id)
+      .populate('article.mediaId')
+      .then((article) => {
+         console.log('article', article);
+        res.render('article/all', {
+           title : Article.title,
+         author: Article.author,
+        });
+      })
+       .catch(next);
+     ;
+  });
+
 module.exports = router;

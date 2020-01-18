@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
-
-const Article = require('../models/article.js');
-
-const uploadCloud = require('../config/cloudinary.js')
+const Article = require('../../models/article.js');
+const Media = require('../../models/media.js');
+const uploadCloud = require('../../config/cloudinary.js');
 
 
 //Edit un article
