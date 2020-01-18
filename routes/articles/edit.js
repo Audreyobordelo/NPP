@@ -5,9 +5,21 @@ const Media = require('../../models/media.js');
 const uploadCloud = require('../../config/cloudinary.js');
 
 
+router.get('/edit', (req, res, next) => {
+  console.log(' TEST')
+   
+   res.render('article/edit');
+ });
+ 
+
+
+ 
+
+
 //Edit un article
 
-router.post('/:id/comments', uploadCloud.single('image'), function (req, res, next) {
+
+router.post('edit-article/:article.id', uploadCloud.single('image'), function (req, res, next) {
     if (!req.user) return next(new Error('You must be logged to edit an article'));
   
     const id = req.params.id;
@@ -21,7 +33,7 @@ router.post('/:id/comments', uploadCloud.single('image'), function (req, res, ne
       tags : req.body.tags,
     }}})
       .then(book => {
-        res.redirect(`/posts/${id}`);
+        res.redirect(`/article/${id}`);
       })
       .catch(next)
     ;

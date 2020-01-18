@@ -12,7 +12,7 @@ router.get('/all',(req, res) => {
     return;
   }
   // sinon on affiche la page
-  res.render('article/all', { media: req.user });
+  res.render('article/all', { media : req.user });
 });
 
 //All : afficher tous les articles d'un media
@@ -24,7 +24,7 @@ router.get('/id/:id', function (req, res, next) {
          console.log('article', article);
         res.render('article/all', {
            title : Article.title,
-         author: Article.author,
+           author: Article.author,
         });
       })
        .catch(next);
