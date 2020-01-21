@@ -10,10 +10,7 @@ router.get('/edit', (req, res, next) => {
    
    res.render('article/edit');
  });
- 
 
-
- 
 
 
 //Edit un article

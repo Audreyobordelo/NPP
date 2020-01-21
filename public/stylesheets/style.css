@@ -81,11 +81,11 @@ header {
 
 input {
   background: #fff;
-  border: darkgrey; }
+  border: 1px solid darkgrey; }
 
 textarea {
   background: #fff;
-  border: darkgrey; }
+  border: 1px solid darkgrey; }
 
 .center-form {
   display: inline-block;

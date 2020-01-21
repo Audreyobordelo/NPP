@@ -48,7 +48,7 @@ router.post('/new', uploadCloud.single('pic'), function (req, res, next) {
 */
 
 
-router.post("/create-article", uploadCloud.single('profile-pic'), (req, res, next) => {
+router.post("/create-article", uploadCloud.single('picFeatured'), (req, res, next) => {
   const title = req.body.title;
   const picFeatured= req.body.picFeatured;
   const picCaption= req.body.picCaption;

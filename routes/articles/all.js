@@ -11,9 +11,17 @@ router.get('/all',(req, res) => {
     res.redirect('/');
     return;
   }
+
+  // trouver les articles
+  Media.findById(req.user._id)
+  .populate('articles')
+  .then(myself => res.render('article/all', { myself }))
+
   // sinon on affiche la page
-  res.render('article/all', { media : req.user });
+  ;
 });
+
+
 
 //All : afficher tous les articles d'un media
 router.get('/id/:id', function (req, res, next) {
