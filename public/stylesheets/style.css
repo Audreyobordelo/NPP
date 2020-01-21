@@ -127,6 +127,90 @@ button {
 
 /********** ARTICLE **********/
 /********** ALL ARTICLES **********/
+.all-articles {
+  margin-top: 20px; }
+
+.all-articles ul li {
+  display: flex;
+  width: 100%;
+  margin-top: 3px;
+  font-size: 15px; }
+
+.title-top {
+  background-color: #f19d31;
+  padding: 8px;
+  border-radius: 20px 0 0 0;
+  -moz-border-radius: 20px 0 0 0;
+  -webkit-border-radius: 20px 0 0 0;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  width: 37.3%;
+  text-align: center; }
+
+.title-top a {
+  color: white; }
+
+.author-top {
+  background-color: #f19d31;
+  padding: 8px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  width: 15%;
+  text-align: center; }
+
+.date-top {
+  background-color: #f19d31;
+  padding: 8px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  width: 20%;
+  text-align: center; }
+
+.action-top {
+  background-color: #f19d31;
+  padding: 8px;
+  border-radius: 0 20px 0 0;
+  -moz-border-radius: 0 20px 0 0;
+  -webkit-border-radius: 0 20px 0 0;
+  color: #f19d31;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center; }
+
+.title {
+  background-color: #dfdfdf;
+  padding: 8px;
+  font-weight: bold;
+  width: 37.3%; }
+
+.author {
+  background-color: #dfdfdf;
+  padding: 8px;
+  font-weight: bold;
+  width: 15%;
+  text-align: center; }
+
+.date {
+  background-color: #dfdfdf;
+  padding: 8px;
+  font-weight: bold;
+  width: 20%;
+  text-align: center; }
+
+.action {
+  background-color: #dfdfdf;
+  padding: 8px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center; }
+
 /********** LAYOUT **********/
 .nav-bar {
   display: flex;

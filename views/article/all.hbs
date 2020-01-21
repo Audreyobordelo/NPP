@@ -6,30 +6,38 @@
     </div>
 
     <div class="nav-middle">
-      <h1>{{myself.name}}</h1>
-      <h3>{{myself.articles.length}} articles</h3>
+      <h1>{{name}}</h1>
+      <h3>{{articles.length}} articles</h3>
       <p class="links-nav"><a href="/profile">Edit profile</a> - <a href="/logout">Log out</a></p>
     </div>
 
     <div class="nav-right">
-      <div class="profile-pic-nav" style="background: url({{myself.profilePic}}); background-size: contain; background-repeat: no-repeat; background-position: center;"> 
+      <div class="profile-pic-nav" style="background: url({{profilePic}}); background-size: contain; background-repeat: no-repeat; background-position: center;"> 
       </div>
     </div>
   </div>
 
 <div class="all-articles">
   <ul>
-    {{#each myself.articles}}
+    <li>
+      <div class="title-top">Title</div>
+      <div class="author-top">Authors</div>
+      <div class="date-top">Time of creation</div>
+      <div class="date-top">Last update</div>
+      <div class="action-top">E D</div>
+    </li>
+    {{#each articles}}
     <li>
       <div class="title"><a href="/edit-article/{{_id}}">{{title}}</a></div>
       <div class="author">{{author}}</div>
-      <div class="date">created at</div>
-      <div class="date">updated at></div>
-      <div class="action"><a href="/edit-article/{{_id}}">E</a></div>
-      <div class="action"><a href="/delete-article/{{_id}}">D</a></div>
+      <div class="date">{{createdAt}}</div>
+      <div class="date">{{updatedAt}}</div>
+      <div class="action"><a href="/edit-article/{{_id}}">E</a> <a href="/delete-article/{{_id}}">D</a></div>
     </li>
-    {{else}}
-    no post
    {{/each}}
   </ul>
 </div>
+
+{{#if message}}
+  <div class="error-message">{{ message }}</div>
+{{/if}}
