@@ -28,7 +28,7 @@
     </li>
     {{#each articles}}
     <li>
-      <div class="title"><a href="/edit-article/{{_id}}">{{title}}</a></div>
+      <div class="title"><a href="/article/edit-article/{{_id}}">{{title}}</a></div>
       <div class="author">{{author}}</div>
       <div class="date">{{createdAt}}</div>
       <div class="date">{{updatedAt}}</div>
@@ -41,3 +41,4 @@
 {{#if message}}
   <div class="error-message">{{ message }}</div>
 {{/if}}
+

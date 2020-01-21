@@ -5,6 +5,14 @@ const Media = require('../../models/media.js');
 const uploadCloud = require('../../config/cloudinary.js');
 
 
+router.get('/edit-article/:articleId', (req, res, next) => {
+  const articleId = req.params.articleId;
+   Article.findById(articleId)
+    .then(articleFromDatabase => {
+      res.render('article/edit-article', {articleFromDatabase});
+    })
+   .catch(next);
+})
 //Edit un article
 
 router.post('/:id/comments', uploadCloud.single('image'), function (req, res, next) {
