@@ -12,7 +12,7 @@ const ArticleSchema = new Schema({
   article: String,
   tags: Array
 }, {
-  timestamps: true
+  timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });
 
 const Article = mongoose.model('Article', ArticleSchema);

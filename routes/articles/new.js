@@ -8,7 +8,6 @@ const uploadCloud = require('../../config/cloudinary.js');
 //New article
 
 router.get('/new', (req, res, next) => {
- console.log(' TEST')
   
   res.render('article/new');
 });
@@ -63,6 +62,12 @@ router.post("/create-article", uploadCloud.single('picFeatured'), (req, res, nex
     article,
     tags,
   });
+
+  if (req.body.title === "" || req.body.author === "" || req.body.article === "") {
+    res.render("article/new", { message: "Your article needs to have a title, an author and a body." });
+    return;
+  };
+
     articles
 
     // enregistrement sur la bdd de l'article
