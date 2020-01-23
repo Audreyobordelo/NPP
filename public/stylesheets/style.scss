@@ -34,7 +34,7 @@ header {
 }
 
 .logo-index {
-  width: 35%;
+  width: 27%;
   display: inline-block;
   z-index: 8;
 }
@@ -50,8 +50,9 @@ header {
   text-align: center;
   padding: 30px;
   margin: auto;
-  width: 62%;
+  width: 55%;
   font-size: 16px;
+  padding-top: 40px;
 }
 
 .bouton {
@@ -69,6 +70,11 @@ header {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+
+.highlight {
+  color: #f19d31;
+  font-weight: bold;
 }
 
 /********** SIGN UP **********/
@@ -155,7 +161,7 @@ button {
 
 /********** ALL ARTICLES **********/
 .all-articles {
-  margin-top: 20px;
+  margin-top: 110px;
 }
 
 .all-articles ul li {
