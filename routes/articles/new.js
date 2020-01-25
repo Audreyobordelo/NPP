@@ -52,14 +52,14 @@ router.post("/create-article", uploadCloud.single('picFeatured'), (req, res, nex
   const picFeatured= req.body.picFeatured;
   const picCaption= req.body.picCaption;
   const author= req.body.author;
-  const article = req.body.article;
+  const articleContent = req.body.articleContent;
   const tags = req.body.tags;
   const articles = new Article({
     title,
     picFeatured,
     picCaption,
     author,
-    article,
+    articleContent,
     tags,
   });
 

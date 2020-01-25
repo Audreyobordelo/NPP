@@ -9,28 +9,22 @@ router.get('/edit-article/:articleId', (req, res, next) => {
   const articleId = req.params.articleId;
    Article.findById(articleId)
     .then(articleFromDatabase => {
-      res.render('article/edit-article', {articleFromDatabase});
+      console.log(articleFromDatabase)
+      res.render('article/edit-article', { articleFromDatabase });
     })
    .catch(next);
 })
 //Edit un article
 
-router.post('/:id/comments', uploadCloud.single('image'), function (req, res, next) {
+router.post('/edit-article/:articleId', uploadCloud.single('image'), function (req, res, next) {
     if (!req.user) return next(new Error('You must be logged to edit an article'));
   
-    const id = req.params.id;
-  
-    Article.update({ _id: id }, { $push: { article: {
-      title: req.body.title,
-      picFeatured: req.body.picFeatured,
-      picCaption: req.picCaption,
-      author: req.body.author,
-      article : req.body.article,
-      tags : req.body.tags,
-    }}})
-      .then(book => {
-        res.redirect(`/posts/${id}`);
-      })
+    const id = req.params.articleId;
+    
+    Article.update({ _id: id }, req.body)
+      .then(
+        res.redirect("/article/all")
+      )
       .catch(next)
     ;
   })

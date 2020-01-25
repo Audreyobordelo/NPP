@@ -9,7 +9,7 @@ const ArticleSchema = new Schema({
   picFeatured: String,
   picCaption: String,
   author: String,
-  article: String,
+  articleContent: String,
   tags: Array
 }, {
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
